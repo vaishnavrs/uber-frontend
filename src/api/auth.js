@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// const API_URL = "http://127.0.0.1:8000/";
-const API_URL = "https://uber-backend-hqx7.onrender.com/";
+const API_URL = "http://127.0.0.1:8000/";
+// const API_URL = "https://uber-backend-hqx7.onrender.com/";
 
 export const initiateLogin = async (phone) => {
     try {
         const response = await axios.post(`${API_URL}accounts/log-initiate/`, { phone });
-
+        console.log("otp",response.data.otp)
         return {
             error: false,
             message: response.data.msg || "OTP sent",
