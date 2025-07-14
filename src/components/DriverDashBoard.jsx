@@ -43,7 +43,8 @@ function DriverDashBoard() {
   useEffect(() => {
     
       if (!userId) return;
-      const socketUrl = `ws://127.0.0.1:8000/ws/ride-request/${userId}/`;
+      // const socketUrl = `ws://127.0.0.1:8000/ws/ride-request/${userId}/`;
+      const socketUrl = `wss://uber-backend-hqx7.onrender.com/ws/ride-request/${userId}/`;
       ws.current = new WebSocket(socketUrl);
 
       ws.current.onopen = () => {

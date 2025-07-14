@@ -12,7 +12,9 @@ function Travel() {
   useEffect(() => {
     if (!userId) return;
 
-    const socketUrl = `ws://127.0.0.1:8000/ws/ride-response/${userId}/`;
+    // const socketUrl = `ws://127.0.0.1:8000/ws/ride-response/${userId}/`;
+    const socketUrl = `wss://uber-backend-hqx7.onrender.com/ws/ride-response/${userId}/`;
+
     // const socketUrl = `ws://192.168.1.44:8000/ws/ride-response/${userId}`;
     ws.current = new WebSocket(socketUrl);
 
